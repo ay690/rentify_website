@@ -11,7 +11,7 @@ export const createListing = async (req, res, next) => {
 };
 
 export const deleteListing = async (req, res, next) => {
-  const listing = await Listing.findById(req.param.id);
+  const listing = await Listing.findById(req.params.id);
 
   if (!listing) {
     return next(errorHandler(404, "Lsitings not found"));
@@ -27,7 +27,7 @@ export const deleteListing = async (req, res, next) => {
   }
 
   try {
-    await Listing.findByIdAndDelete(req.param.id);
+    await Listing.findByIdAndDelete(req.params.id);
     res.status(201).json("Listing has been deleted!!!");
   } catch (error) {
     next(error);
