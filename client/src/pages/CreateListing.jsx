@@ -156,7 +156,7 @@ const CreateListing = () => {
       setLoading(false);
     }
   };
-  
+
   return (
     <main className="max-w-4xl p-3 mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">
@@ -285,7 +285,10 @@ const CreateListing = () => {
               />
               <div className="flex flex-col items-center">
                 <p>Regular price</p>
-                <span className="text-xs">($ / month)</span>
+                {/* <span className="text-xs">($ / month)</span> */}
+                {formData.type === "rent" && (
+                  <span className="text-xs">($ / month)</span>
+                )}
               </div>
             </div>
             {formData.offer && (
@@ -302,7 +305,10 @@ const CreateListing = () => {
                 />
                 <div className="flex flex-col items-center">
                   <p>Discounted price</p>
-                  <span className="text-xs">($ / month)</span>
+                  {/* <span className="text-xs">($ / month)</span> */}
+                  {formData.type === "rent" && (
+                    <span className="text-xs">($ / month)</span>
+                  )}
                 </div>
               </div>
             )}
