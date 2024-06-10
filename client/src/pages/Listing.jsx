@@ -13,7 +13,7 @@ import {
   FaParking,
   FaShare,
 } from "react-icons/fa";
-import Contact from "./Contact";
+import Contact from "../components/Contact";
 import { useSelector } from "react-redux";
 
 const Listing = () => {
