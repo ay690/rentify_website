@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const Search = () => {
   const navigate = useNavigate();
-  const [sideBarData, setsideBarData] = useState({
+  const [sideBarData, setSideBarData] = useState({
     searchTerm: "",
     type: "all",
     offer: false,
@@ -37,7 +37,7 @@ const Search = () => {
       sortFromURL ||
       orderFromURL
     ) {
-      setsideBarData({
+      setSideBarData({
         searchTerm: searchTermFromURL || "",
         type: typeFromURL || "all",
         parking: parkingFromURL === true ? true : false,
@@ -66,11 +66,11 @@ const Search = () => {
       e.target.id === "rent" ||
       e.target.id === "sale"
     ) {
-      setsideBarData({ ...sideBarData, type: e.target.id });
+      setSideBarData({ ...sideBarData, type: e.target.id });
     }
 
     if (e.target.id === "searchTerm") {
-      setsideBarData({ ...sideBarData, searchTerm: e.target.value });
+      setSideBarData({ ...sideBarData, searchTerm: e.target.value });
     }
 
     if (
@@ -78,7 +78,7 @@ const Search = () => {
       e.target.id === "furnished" ||
       e.target.id === "offer"
     ) {
-      setsideBarData({
+      setSideBarData({
         ...sideBarData,
         [e.target.id]:
           e.target.checked || e.target.checked === "true" ? true : false,
@@ -90,7 +90,7 @@ const Search = () => {
 
       const order = e.target.value.split("_")[1] || "desc";
 
-      setsideBarData({ ...sideBarData, sort, order });
+      setSideBarData({ ...sideBarData, sort, order });
     }
   };
 
