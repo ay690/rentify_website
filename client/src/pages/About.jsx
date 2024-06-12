@@ -2,7 +2,8 @@ const About = () => {
   return (
     <div className="max-w-6xl px-4 py-20 mx-auto">
       <h1 className="mb-4 text-3xl font-bold text-slate-700 md:text-center">
-        About Rentify
+        About <span className="text-slate-500">Rent</span>
+        <span className="text-slate-700">Ify</span>
       </h1>
       <p className="mb-4 text-slate-700">
         Rentify is a premier real estate agency specializing in assisting
